@@ -22,9 +22,20 @@
 
 <body>
     <div id="root">
-
+        <div class="container">
+            <ul v-for="song in songs" :key="song.title">
+                <li>
+                    <img :src="`${song.poster}`" alt="">
+                    <h3>{{title}}</h3>
+                    <div class="description">
+                        <div class="author">{{author}}</div>
+                        <div class="year">{{year}}</div>
+                    </div>
+                </li>
+            </ul>
+        </div>
     </div>
-    <script src=""></script>
+    <script src="js/script.js"></script>
 </body>
 
 </html>
