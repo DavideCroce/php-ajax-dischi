@@ -17,18 +17,25 @@ include 'data/data.php';
 </head>
 
 <body>
-    <div class="container">
-        <ul <?php foreach ($songs as $song) : ?> class="container d-flex flex-row ">
-            <li>
-                <img src="<?php echo $song['poster'] ?>" alt="">
-                <h3><?php echo $song['title'] ?></h3>
-                <div class="description">
-                    <div class="author"><?php echo $song['author'] ?></div>
-                    <div class="year"><?php echo $song['year'] ?></div>
-                </div>
-            </li>
-        </ul <? endforeach ?>>
-    </div>
+    <header>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/8/84/Spotify_icon.svg" alt="">
+    </header>
+    <main>
+        <div class="container">
+            <ul class="container d-flex flex-row flex-wrap">
+                <?php foreach ($songs as $song) : ?>
+                    <li class="col-3 d-flex justify-content-center flex-column mx-4 pb-5 mb-4">
+                        <img src="<?php echo $song['poster'] ?>" alt="">
+                        <h3><?php echo $song['title'] ?></h3>
+                        <div class="description">
+                            <div class="author"><?php echo $song['author'] ?></div>
+                            <div class="year"><?php echo $song['year'] ?></div>
+                        </div>
+                    </li>
+                <? endforeach ?>
+            </ul>
+        </div>
+    </main>
 </body>
 
 </html>
