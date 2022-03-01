@@ -17,23 +17,34 @@
         src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.14/vue.common.dev.js"
         integrity="sha512-qRXBGtdrMm3Vdv+YXYud0bixlSfZuGz+FmD+vfXuezWYfw4m5Ov0O4liA6UAlKw2rh9MOYULxbhSFrQCsF1hgg=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.26.0/axios.min.js"
+        integrity="sha512-bPh3uwgU5qEMipS/VOmRqynnMXGGSRv+72H/N260MQeXZIK4PG48401Bsby9Nq5P5fz7hy5UGNmC/W1Z51h2GQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <title>Spotify</title>
 </head>
 
 <body>
     <div id="root">
-        <div class="container">
-            <ul v-for="song in songs" :key="song.title">
-                <li>
-                    <img :src="`${song.poster}`" alt="">
-                    <h3>{{title}}</h3>
-                    <div class="description">
-                        <div class="author">{{author}}</div>
-                        <div class="year">{{year}}</div>
-                    </div>
-                </li>
-            </ul>
-        </div>
+        <header>
+            <img src="https://upload.wikimedia.org/wikipedia/commons/8/84/Spotify_icon.svg"
+                alt="">
+        </header>
+        <main>
+            <div class="container">
+                <ul class="container d-flex flex-row flex-wrap">
+                    <li v-for="song in songs" :key="song.title"
+                        class="col-3 d-flex justify-content-center flex-column mx-4 pb-5 mb-4">
+                        <img :src="`${song.poster}`" alt="">
+                        <h3>{{song.title}}</h3>
+                        <div class="description">
+                            <div class="author">{{song.author}}</div>
+                            <div class="year">{{song.year}}</div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </main>
     </div>
     <script src="js/script.js"></script>
 </body>
