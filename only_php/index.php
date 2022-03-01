@@ -18,8 +18,8 @@ include 'data/data.php';
 
 <body>
     <div class="container">
-        <ul <?php foreach ($songs as $song) : ?> class="container">
-            <li class="">
+        <ul <?php foreach ($songs as $song) : ?> class="container d-flex flex-row ">
+            <li>
                 <img src="<?php echo $song['poster'] ?>" alt="">
                 <h3><?php echo $song['title'] ?></h3>
                 <div class="description">
